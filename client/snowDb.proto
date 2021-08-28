@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snowDB;
+
+option cc_generic_services = true;
+
+message Key
+{
+    string key = 1;
+    optional string value = 2;
+}
+
+message ResultCode
+{
+    int32 errcode = 1;
+    bytes errmsg = 2;
+    optional string value = 3;
+}
+
+service SnowDBRpc
+{
+    rpc Get(Key) returns (ResultCode);
+    rpc Set(Key) returns (ResultCode);
+    rpc Remove(Key) returns (ResultCode);
+}

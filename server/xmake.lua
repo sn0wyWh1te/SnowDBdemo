@@ -1,0 +1,18 @@
+add_rules("mode.debug")
+add_requires("protobuf-cpp")
+add_includedirs("./snowNetLib")
+
+target("test")
+    set_kind("binary")
+    set_languages("c++11")
+    add_packages("protobuf-cpp")
+    add_files("./src/*.cc","./src/db/db/include/*.cc")
+    set_targetdir("./test")
+    add_syslinks("pthread")
+    add_deps("snowNet")
+
+target("snowNet")
+    set_kind("static")
+    add_files("./snowNetLib/*.cc")
+    add_links("pthread")
+    set_targetdir("./snowNetLib")
