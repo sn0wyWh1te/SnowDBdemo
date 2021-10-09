@@ -1,6 +1,6 @@
 ### 简介
 
-**snow data base** 是一个基于LSM-Tree理论的key value数据库
+**snow data base** 是一个基于Bitcask理论的key value数据库
 
 数据库可以内嵌式使用，或者使用Client-Server的方式使用，client采用了阻塞的方式进行远程rpc调用
 所依赖的rpc工具为作者自研的snow rpc，如果您需要，也可以单独将snow rpc部分抽出来，发布自己的rpc方法
